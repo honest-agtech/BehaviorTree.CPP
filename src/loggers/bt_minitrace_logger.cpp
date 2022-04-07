@@ -68,6 +68,7 @@ void MinitraceLogger::callback(Duration /*timestamp*/,
     else if (prev_status == NodeStatus::RUNNING && statusCompleted)
     {
         MTR_END(category, name);
+        minitrace::mtr_flush();
     }
 }
 
